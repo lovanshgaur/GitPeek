@@ -201,6 +201,10 @@ input:-webkit-autofill:focus {
   html {
     font-size: 90%;
   }
+  .logo{
+    height: 45%;
+    width: auto;
+  }
   form {
     width: 90%;
   }

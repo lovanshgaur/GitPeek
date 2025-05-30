@@ -1,0 +1,342 @@
+/* ========= Shared Styles ========= */
+#card{
+  width: 50%;
+}
+.profile-card {
+  box-sizing: border-box;
+}
+
+.avatar {
+  object-fit: cover;
+}
+
+.stat{
+  display: flex;
+  flex-direction: column;
+}
+.stat .number {
+  font-weight: 700;
+}
+
+/* ========= Layout 1: Classic Vertical Card ========= */
+.layout1 .profile-card {
+  max-width: 17.5rem;
+  margin: 1.25rem auto;
+  padding: 1.25rem;
+  background: #fff;
+  border-radius: 0.9375rem;
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #333;
+  background-color: gainsboro;
+}
+
+.layout1 .avatar {
+  width: 7.5rem;
+  height: 7.5rem;
+  margin: auto;
+  margin-bottom: 0.9375rem;
+  border: 0.1875rem solid #4a90e2;
+  border-radius: 50%;
+}
+
+.layout1 .name {
+  font-size: 1.5rem;
+  margin-bottom: 0.3125rem;
+}
+
+.layout1 .username {
+  color: #777;
+  margin-bottom: 0.9375rem;
+}
+
+.layout1 .bio {
+  font-style: italic;
+  margin-bottom: 1.25rem;
+  font-size: 0.9375rem;
+}
+
+.layout1 .stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.25rem;
+}
+
+.layout1 .stat .number {
+  color: #4a90e2;
+  font-size: 1.25rem;
+}
+
+.layout1 .location {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+/* ========= Layout 2: Horizontal Split Card ========= */
+.layout2 .profile-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: 37.5rem;
+  margin: 1.875rem auto;
+  padding: 1.25rem;
+  background: #f8f9fa;
+  border-radius: 1rem;
+  box-shadow: 0 0.375rem 1.125rem rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.layout2 .avatar {
+  width: 8.125rem;
+  height: 8.125rem;
+  margin-right: 1.5625rem;
+  border: 0.1875rem solid #4a90e2;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.layout2 .name,
+.layout2 .username,
+.layout2 .bio,
+.layout2 .stats,
+.layout2 .location {
+  flex-basis: 100%;
+}
+
+.layout2 .name {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.3125rem;
+}
+
+.layout2 .username {
+  color: #666;
+  margin-bottom: 0.625rem;
+}
+
+.layout2 .bio {
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 0.9375rem;
+}
+
+.layout2 .stats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.875rem;
+  margin-bottom: 0.9375rem;
+}
+
+.layout2 .stat .number {
+  font-size: 1.2rem;
+  color: #4a90e2;
+}
+
+.layout2 .location {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+/* ========= Layout 3: Minimal Dark with Bottom Stats ========= */
+.layout3 .profile-card {
+  width: 300px;
+  height: 400px;
+  margin: 1.875rem auto;
+  background: #222;
+  color: #eee;
+  border-radius: 0.75rem;
+  box-shadow: 0 0.375rem 1.25rem rgba(0, 0, 0, 0.5);
+  text-align: center;
+  padding: 1.5625rem 1.25rem 3.75rem;
+  position: relative;
+}
+
+.layout3 .avatar {
+  width: 6.875rem;
+  height: 6.875rem;
+  border: 0.1875rem solid #ff5722;
+  margin: auto;
+  margin-bottom: 0.9375rem;
+  border-radius: 50%;
+}
+
+.layout3 .name {
+  font-weight: 900;
+  font-size: 1.6rem;
+  margin-bottom: 0.3125rem;
+  letter-spacing: 0.09375rem;
+}
+
+.layout3 .username {
+  color: #ff7043;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.layout3 .bio {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.layout3 .stats {
+  display: flex;
+  justify-content: space-around;
+  background: #333;
+  padding: 0.5rem 0;
+  border-radius: 0 0 0.75rem 0.75rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.layout3 .stat {
+  display: flex;
+  flex-direction: column;
+}
+.layout3 .stat .number {
+  font-size: 1.4rem;
+  color: #ff5722;
+}
+
+.layout3 .location {
+  margin-top: 0.625rem;
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+/* ========= Layout 4: Overlay Gradient Centered Text ========= */
+.layout4 .profile-card {
+  max-width: 21.875rem;
+  margin: 1.875rem auto;
+  border-radius: 1.125rem;
+  overflow: hidden;
+  position: relative;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0.5rem 1.875rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 2rem;
+}
+
+.layout4 .profile-card:hover {
+  transform: scale(1.05);
+}
+
+.layout4 .profile-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+  z-index: 0;
+}
+
+.layout4 .avatar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.layout4 .name,
+.layout4 .username,
+.layout4 .bio,
+.layout4 .stats,
+.layout4 .location {
+  position: relative;
+  z-index: 1;
+}
+
+.layout4 .name {
+  margin-top: 8.75rem;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.075rem;
+}
+
+.layout4 .username {
+  color: #ddd;
+  margin: 0.3125rem 0 0.9375rem;
+  font-size: 1.1rem;
+}
+
+.layout4 .bio {
+  font-style: italic;
+  font-size: 0.9375rem;
+  margin-bottom: 1.25rem;
+}
+
+.layout4 .stats {
+  display: flex;
+  justify-content: center;
+  gap: 1.875rem;
+  margin-bottom: 1.25rem;
+}
+
+.layout4 .stat .number {
+  font-size: 1.4rem;
+  color: #ffcc00;
+  text-shadow: 1px 2px 1px black;
+}
+
+.layout4 .location {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f0e68c;
+}
+
+/* ========= Layout 5: Neumorphism Style ========= */
+.layout5 .profile-card {
+  max-width: 18.75rem;
+  margin: 2.5rem auto;
+  padding: 1.5625rem;
+  border-radius: 1.5625rem;
+  background: #e0e0e0;
+  box-shadow: 0.5rem 0.5rem 0.9375rem #bebebe, -0.5rem -0.5rem 0.9375rem #ffffff;
+  color: #555;
+  text-align: center;
+}
+
+.layout5 .avatar {
+  width: 7.1875rem;
+  height: 7.1875rem;
+  margin-bottom: 1.25rem;
+  box-shadow: inset 0.3125rem 0.3125rem 0.625rem #bebebe,
+    inset -0.3125rem -0.3125rem 0.625rem #ffffff;
+  border-radius: 50%;
+}
+
+.layout5 .name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.layout5 .username {
+  color: #999;
+  margin-bottom: 0.9375rem;
+}
+
+.layout5 .bio {
+  font-style: italic;
+  margin-bottom: 1.5625rem;
+  font-size: 0.9375rem;
+}
+
+.layout5 .stats {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.25rem;
+}
+
+.layout5 .stat .number {
+  font-size: 1.1rem;
+  color: #3a3a3a;
+}
+
+.layout5 .location {
+  font-size: 0.875rem;
+  color: #666;
+}

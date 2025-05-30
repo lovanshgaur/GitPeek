@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Inter", sans-serif;
+  background-color: var(--background);
+  color: var(--color);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  overflow: hidden;
+}
+
+:root{
+  /* --background: #EDEAE6; */
+  --color: #edeae6;
+  --accent: #0A2539;
+  --background: #000;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+img {
+  width: 100%;
+  height: 100%;
+}
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+.setting-btn{
+  position: fixed;
+  bottom: 1.5%;
+  left: 0.5%;
+  background-color: firebrick;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ================Main Body CSS================ */
+main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+}
+/* ================Main Body-Sidebar CSS================ */
+.sidebar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+
+}
+.logo{
+  width: max-content;
+  height: 100%;
+}
+form{
+  height: 100%;
+  width: 50%;
+  gap: 0.5rem;
+  padding: 2rem 0rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h3{
+  width: 100%;
+}
+.search{
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  box-shadow: 1px 1px 1px black;
+  border: 1px solid azure;
+  border-radius: 0.5rem;
+}
+input{
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  background: none;
+  outline: none;
+  border: none;
+  color: var(--color);
+  overflow: hidden !important;
+}
+input:-internal-autofill-selected{
+  background: red;
+}
+input::placeholder{
+  color: var(--color);
+  opacity: 0.7;
+  background: none;
+}
+input:focus{
+  background: none;
+}
+ input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+  }
+
+button{
+  padding: 0.25rem 1rem;
+  border: 1px solid azure;
+  border-radius: 0.5rem;
+  background: none;
+  color: inherit;
+}
+/* ================Main Body-Peek CSS================ */
+.peek {
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  transition: all 0.5s ease-in-out;
+  background: var(--background);
+}
+.peek-on{
+  top: 0%;
+}
+.profile{
+  width: 100%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0rem 3rem;
+}
+.controls{
+  width: 100%;
+  bottom: 0%;
+  right: 0; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0rem 1rem;
+  gap: 1rem;
+}
+
+/* Responsive Typography */
+@media (max-width: 600px) {
+  html {
+    font-size: 90%;
+  }
+}

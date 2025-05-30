@@ -1,11 +1,17 @@
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html,
-body {
+:root {
+  --color: #edeae6;
+  --accent: #0A2539;
+  --background: #000;
+}
+
+html, body {
   height: 100%;
   font-family: "Inter", sans-serif;
   background-color: var(--background);
@@ -15,29 +21,17 @@ body {
   overflow: hidden;
 }
 
-:root{
-  /* --background: #EDEAE6; */
-  --color: #edeae6;
-  --accent: #0A2539;
-  --background: #000;
-}
-
-img,
-picture,
-video,
-canvas,
-svg {
+/* Media Elements */
+img, picture, video, canvas, svg {
   display: block;
   max-width: 100%;
 }
 img {
   width: 100%;
-  height: 100%;
+  height: auto;
 }
-input,
-button,
-textarea,
-select {
+
+input, button, textarea, select {
   font: inherit;
 }
 
@@ -46,15 +40,16 @@ a {
   color: inherit;
 }
 
-ul[role="list"],
-ol[role="list"] {
+ul[role="list"], ol[role="list"] {
   list-style: none;
 }
 
 ::-webkit-scrollbar {
   width: 0;
 }
-.setting-btn{
+
+/* Floating Settings Button */
+.setting-btn {
   position: fixed;
   bottom: 1.5%;
   left: 0.5%;
@@ -65,46 +60,50 @@ ol[role="list"] {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 9999;
 }
-/* ================Main Body CSS================ */
+
+/* ========== Main Layout ========== */
 main {
   width: 100%;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
   position: relative;
+  flex-direction: column;
 }
-/* ================Main Body-Sidebar CSS================ */
+
+/* Sidebar */
 .sidebar {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   flex-direction: column;
-
+  flex-wrap: wrap;
 }
-.logo{
+.logo {
+  height: auto;
   width: max-content;
-  height: 100%;
 }
-form{
-  height: 100%;
+
+form {
   width: 50%;
+  padding: 2rem 0;
   gap: 0.5rem;
-  padding: 2rem 0rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-h3{
+h3 {
   width: 100%;
 }
-.search{
+
+/* Input + Button */
+.search {
   width: 100%;
   display: flex;
   align-items: flex-start;
@@ -113,39 +112,33 @@ h3{
   border: 1px solid azure;
   border-radius: 0.5rem;
 }
-input{
+input {
   width: 100%;
   padding: 0.25rem 0.5rem;
   background: none;
   outline: none;
   border: none;
   color: var(--color);
-  overflow: hidden !important;
 }
-input:-internal-autofill-selected{
-  background: red;
-}
-input::placeholder{
+input::placeholder {
   color: var(--color);
   opacity: 0.7;
-  background: none;
 }
-input:focus{
-  background: none;
-}
- input:-webkit-autofill,
-  input:-webkit-autofill:focus {
-    transition: background-color 0s 600000s, color 0s 600000s !important;
-  }
-
-button{
+button {
   padding: 0.25rem 1rem;
   border: 1px solid azure;
   border-radius: 0.5rem;
   background: none;
   color: inherit;
 }
-/* ================Main Body-Peek CSS================ */
+
+/* Autofill fix */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+/* ========== Peek Section ========== */
 .peek {
   position: absolute;
   top: -100%;
@@ -156,34 +149,70 @@ button{
   align-items: center;
   justify-content: center;
   flex-direction: column-reverse;
-  transition: all 0.5s ease-in-out;
   background: var(--background);
+  transition: all 0.5s ease-in-out;
 }
-.peek-on{
+.peek-on {
   top: 0%;
 }
-.profile{
+.profile {
   width: 100%;
   height: 85%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  padding: 0rem 3rem;
+  justify-content: center;
+  padding: 0 3rem;
+  flex-wrap: wrap;
 }
-.controls{
+.controls {
   width: 100%;
-  bottom: 0%;
-  right: 0; 
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0rem 1rem;
+  padding: 1rem;
+  flex-wrap: wrap;
   gap: 1rem;
 }
 
-/* Responsive Typography */
-@media (max-width: 600px) {
+/* ========== Responsive Breakpoints ========== */
+@media (max-width: 1024px) {
+  form {
+    width: 70%;
+  }
+  .profile {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  form {
+    width: 80%;
+  }
+  .search {
+    flex-direction: column;
+  }
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+@media (max-width: 480px) {
   html {
     font-size: 90%;
+  }
+  form {
+    width: 90%;
+  }
+  .profile {
+    flex-direction: column;
+    height: auto;
+  }
+  .setting-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .controls button {
+    width: 100%;
   }
 }

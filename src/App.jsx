@@ -1,29 +1,15 @@
-import { useState } from "react";
+//App.jsx
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import Result from "./pages/Result.jsx";
+
 
 function App() {
-  const [text, setText] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    console.log("Submitted:", text);
-    setMessage(`Input taken - ${text}`);
-    setText("");
-
-    setTimeout(() => {
-      setMessage("");
-    }, 2000);
-  };
-
   return (
-    <div>
-      {message ? <div className="message">{message}</div> : ""}
-      <form onSubmit={handleSubmit}>
-        <label>Enter Your Username</label>
-        <input value={text} onChange={(e) => setText(e.target.value)} />
-      </form>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/result" element={<Result />} />
+    </Routes>
   );
 }
 

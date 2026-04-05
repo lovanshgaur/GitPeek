@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Card from './Card.jsx'
 
 export default function GitHubUser({ username }) {
   const [user, setUser] = useState(null);
@@ -17,13 +18,11 @@ export default function GitHubUser({ username }) {
     fetchUser();
   }, [username]); 
 
-  if (!user) return <p>Enter a username...</p>;
+  if (!user) return <p>loading....</p>;
 
   return (
-    <div>
-      <img src={user.avatar_url} width="100" />
-      <h2>{user.name}</h2>
-      <p>{user.login}</p>
-    </div>
+    <>
+      <Card data={user} />
+    </>
   );
 }
